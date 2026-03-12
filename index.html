@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XB Tax Hub — First-Year Alien Optimization Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e42;
+    --navy-light: #243d54;
+    --gold: #c8973a;
+    --gold-light: #e2b464;
+    --gold-pale: #f5e8d0;
+    --cream: #faf7f2;
+    --white: #ffffff;
+    --slate: #5a6a7a;
+    --slate-light: #8a9aaa;
+    --border: rgba(13,27,42,0.1);
+    --border-strong: rgba(13,27,42,0.2);
+    --us-blue: #185FA5;
+    --us-blue-bg: #EBF2FA;
+    --ca-red: #A32D2D;
+    --ca-red-bg: #FAEAEA;
+    --purple: #534AB7;
+    --purple-bg: #EEEDFE;
+    --gray: #888780;
+    --gray-bg: #F1EFE8;
+    --success: #2e7d52;
+    --success-bg: #e8f5ed;
+    --warn: #8a5c00;
+    --warn-bg: #fef3d9;
+    --danger: #a32d2d;
+    --danger-bg: #faeaea;
+    --info: #185FA5;
+    --info-bg: #EBF2FA;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow: 0 2px 12px rgba(13,27,42,0.08);
+    --shadow-lg: 0 8px 32px rgba(13,27,42,0.12);
+  }
+
+  html { font-size: 15px; }
+  body {
+    font-family: 'Figtree', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(200,151,58,0.25);
+  }
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+  }
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .logo-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    color: var(--gold);
+    letter-spacing: -0.01em;
+  }
+  .logo-sub {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .header-tag {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 4px 10px;
+    border: 1px solid rgba(200,151,58,0.3);
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 3.5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,151,58,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,151,58,0.4), transparent);
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    color: var(--white);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .hero-flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-flag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .hero-flag.us { background: rgba(24,95,165,0.3); color: #7cb8f5; border: 1px solid rgba(24,95,165,0.4); }
+  .hero-flag.ca { background: rgba(163,45,45,0.3); color: #f5a0a0; border: 1px solid rgba(163,45,45,0.4); }
+  .hero-flag.gold { background: rgba(200,151,58,0.2); color: var(--gold-light); border: 1px solid rgba(200,151,58,0.3); }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* ── PANEL BASE ── */
+  .panel {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .panel-header {
+    padding: 1.1rem 1.4rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .panel-icon {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .panel-icon.navy { background: var(--navy); color: var(--gold); }
+  .panel-icon.gold { background: var(--gold-pale); color: var(--gold); }
+  .panel-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+  .panel-body { padding: 1.4rem; }
+
+  /* ── INPUTS ── */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-light);
+    margin: 1.4rem 0 0.7rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-label:first-child { margin-top: 0; }
+
+  .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+  .field label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--slate);
+    letter-spacing: 0.02em;
+  }
+  .field select, .field input[type=date] {
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.82rem;
+    padding: 7px 10px;
+    border: 1px solid var(--border-strong);
+    border-radius: 7px;
+    background: var(--cream);
+    color: var(--navy);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%235a6a7a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 28px;
+  }
+  .field input[type=date] {
+    background-image: none;
+    padding-right: 10px;
+  }
+  .field select:focus, .field input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200,151,58,0.12);
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .field-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  /* ── SPT BOX ── */
+  .spt-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .spt-box-head {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.9rem;
+  }
+  .spt-check-item {
+    display: flex;
+    gap: 9px;
+    margin-bottom: 0.75rem;
+    align-items: flex-start;
+  }
+  .spt-check-item:last-of-type { margin-bottom: 0; }
+  .spt-check-item input[type=checkbox] {
+    width: 14px; height: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+  .spt-check-text { flex: 1; }
+  .spt-check-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+    display: block;
+    cursor: pointer;
+    line-height: 1.4;
+  }
+  .spt-check-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+  .spt-result {
+    margin-top: 1rem;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .spt-result.resident { background: rgba(163,45,45,0.3); color: #f5a0a0; border: 1px solid rgba(163,45,45,0.3); }
+  .spt-result.nonresident { background: rgba(46,125,82,0.25); color: #7dd4a4; border: 1px solid rgba(46,125,82,0.25); }
+  .spt-result.unknown { background: rgba(138,92,0,0.3); color: #f5c870; border: 1px solid rgba(138,92,0,0.3); }
+
+  /* ── CANADA TOGGLE ── */
+  .canada-toggle-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.75rem;
+  }
+  .toggle-track {
+    position: relative; width: 38px; height: 21px;
+    background: var(--border-strong); border-radius: 11px;
+    transition: background .2s; flex-shrink: 0; cursor: pointer;
+  }
+  .toggle-track:has(input:checked) { background: var(--ca-red); }
+  .toggle-track input { position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; margin: 0; }
+  .toggle-thumb {
+    position: absolute; top: 2px; left: 2px;
+    width: 17px; height: 17px;
+    background: white; border-radius: 50%;
+    transition: transform .2s; pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .toggle-track input:checked ~ .toggle-thumb { transform: translateX(17px); }
+  .toggle-label { font-size: 0.8rem; font-weight: 500; color: var(--navy); }
+  .canada-flag { font-size: 0.85rem; }
+
+  /* ── ANALYZE BUTTON ── */
+  .btn-analyze {
+    display: block; width: 100%;
+    padding: 11px 20px;
+    background: var(--navy);
+    color: var(--gold-light);
+    border: none; border-radius: var(--radius);
+    font-family: 'Figtree', sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    margin-top: 1.4rem;
+    transition: background .2s, transform .1s, box-shadow .2s;
+    box-shadow: 0 4px 14px rgba(13,27,42,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-analyze::after {
+    content: '↗';
+    margin-left: 6px;
+    font-size: 0.9rem;
+  }
+  .btn-analyze:hover { background: var(--navy-light); box-shadow: 0 6px 20px rgba(13,27,42,0.2); }
+  .btn-analyze:active { transform: scale(0.98); }
+
+  /* ── RIGHT PANEL TABS ── */
+  .output-panel { position: sticky; top: 78px; }
+  .output-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    padding: 0 1.4rem;
+    gap: 0;
+  }
+  .otab {
+    padding: 0.8rem 1rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--slate-light);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+  .otab:hover { color: var(--navy); }
+  .otab.active { color: var(--navy); border-bottom-color: var(--gold); font-weight: 600; }
+  .opane { display: none; padding: 1.4rem; }
+  .opane.active { display: block; }
+
+  /* ── PLACEHOLDER ── */
+  .placeholder {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--slate-light);
+  }
+  .placeholder-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.4;
+  }
+  .placeholder p { font-size: 0.85rem; line-height: 1.7; }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .leg-item { display: flex; align-items: center; gap: 5px; font-size: 0.7rem; color: var(--slate); }
+  .leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ── SCENARIO CARDS ── */
+  .scenarios { display: flex; flex-direction: column; gap: 1rem; }
+  .scenario-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow .2s;
+  }
+  .scenario-card:hover { box-shadow: var(--shadow); }
+  .scenario-card.unavailable { opacity: 0.6; }
+  .unavail-banner {
+    padding: 7px 14px;
+    background: var(--ca-red-bg);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ca-red);
+    border-bottom: 1px solid rgba(163,45,45,0.15);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .unavail-banner::before { content: '✕'; font-size: 0.65rem; }
+  .scenario-header { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  .scenario-title { font-size: 0.85rem; font-weight: 600; }
+  .scenario-sub { font-size: 0.72rem; margin-top: 2px; opacity: 0.75; }
+  .scenario-cols { display: grid; grid-template-columns: 1fr 1fr; }
+  .s-col { padding: 10px 14px; }
+  .s-col:first-child { border-right: 1px solid var(--border); }
+  .s-col-head {
+    font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 7px;
+  }
+  .s-col.pros .s-col-head { color: var(--success); }
+  .s-col.cons .s-col-head { color: var(--danger); }
+  .s-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .s-list li {
+    font-size: 0.72rem; line-height: 1.55;
+    color: var(--slate);
+    padding-left: 12px; position: relative;
+  }
+  .s-list li::before {
+    content: '';
+    position: absolute; left: 3px; top: 7px;
+    width: 4px; height: 4px; border-radius: 50%;
+  }
+  .s-col.pros .s-list li::before { background: var(--success); }
+  .s-col.cons .s-list li::before { background: var(--danger); }
+  .alert-strip {
+    border-top: 1px solid var(--border);
+    padding: 9px 14px;
+    background: var(--cream);
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .abadge {
+    display: inline-flex; align-items: flex-start; gap: 5px;
+    font-size: 0.7rem; font-weight: 500; line-height: 1.5;
+    padding: 4px 8px; border-radius: 5px;
+  }
+  .abadge.warn { background: var(--warn-bg); color: var(--warn); }
+  .abadge.info { background: var(--info-bg); color: var(--info); }
+  .abadge.danger { background: var(--danger-bg); color: var(--danger); }
+  .canada-strip {
+    border-top: 1px solid var(--border);
+    padding: 9px 14px;
+    background: rgba(163,45,45,0.04);
+  }
+  .canada-strip-head {
+    font-size: 0.65rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--ca-red); margin-bottom: 6px;
+  }
+  .canada-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .cdn-tag {
+    font-size: 0.68rem; padding: 3px 8px; border-radius: 4px;
+    background: var(--ca-red-bg); color: var(--ca-red);
+    line-height: 1.5;
+  }
+
+  /* ── FLAGS ── */
+  .flag-section { margin-bottom: 1.2rem; }
+  .flag-section:last-child { margin-bottom: 0; }
+  .flag-section-head {
+    font-size: 0.72rem; font-weight: 600;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .flag-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .flag-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+  .flag-item {
+    font-size: 0.7rem; line-height: 1.55;
+    padding: 7px 10px; border-radius: 6px;
+  }
+  .flag-item.pfic { background: var(--warn-bg); color: var(--warn); }
+  .flag-item.treaty { background: var(--info-bg); color: var(--info); }
+  .flag-item.reporting { background: var(--danger-bg); color: var(--danger); }
+  .flag-item.neutral { background: var(--cream); color: var(--slate); border: 1px solid var(--border); }
+  .flag-item.spt { background: var(--danger-bg); color: var(--danger); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    text-align: center;
+    padding: 1.8rem 2rem;
+    border-top: 1px solid rgba(200,151,58,0.2);
+  }
+  .footer-logo { font-family: 'DM Serif Display', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .footer-disc { font-size: 0.68rem; color: rgba(255,255,255,0.3); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .main { grid-template-columns: 1fr; }
+    .output-panel { position: static; }
+  }
+  @media (max-width: 600px) {
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+    .main { padding: 1.5rem 1.2rem 3rem; gap: 1.5rem; }
+    .panel-body { padding: 1.1rem; }
+    .scenario-cols { grid-template-columns: 1fr; }
+    .s-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+    .field-row, .field-row-3 { grid-template-columns: 1fr; }
+    .output-tabs { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-mark">XB Tax Hub</span>
+      <span class="logo-sub">US–Canada Crossborder</span>
+    </div>
+    <span class="header-tag">Beta Tool</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Planning Tool</div>
+    <h1>First-Year <em>Alien Optimization</em><br>Analyzer</h1>
+    <p class="hero-desc">Qualitative scenario analysis for US first-year residency elections — Dual Status, NR, and §6013 MFJ — with integrated Canada crossborder overlay.</p>
+    <div class="hero-flags">
+      <span class="hero-flag us">Form 1040 / 1040-NR</span>
+      <span class="hero-flag us">§6013(g)/(h) Election</span>
+      <span class="hero-flag gold">PFIC / 8621</span>
+      <span class="hero-flag gold">3520 / FBAR / FATCA</span>
+      <span class="hero-flag ca">Part-Year T1</span>
+      <span class="hero-flag ca">TFSA · RRSP · §216</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT: INPUTS -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon navy">⚖</div>
+      <span class="panel-title">Client Inputs</span>
+    </div>
+    <div class="panel-body">
+
+      <!-- SPT -->
+      <div class="section-label">Substantial Presence Test</div>
+      <div class="spt-box">
+        <div class="spt-box-head">Residency determination</div>
+        <div class="spt-check-item">
+          <input type="checkbox" id="spt-183" onchange="updateSPT()">
+          <div class="spt-check-text">
+            <label class="spt-check-label" for="spt-183">Taxpayer: 183+ days in US this year</label>
+            <span class="spt-check-sub">SPT met on current-year count alone. NR filing not available.</span>
+          </div>
+        </div>
+        <div class="spt-check-item">
+          <input type="checkbox" id="spt-lookback" onchange="updateSPT()">
+          <div class="spt-check-text">
+            <label class="spt-check-label" for="spt-lookback">Meets SPT on weighted 3-year lookback</label>
+            <span class="spt-check-sub">Current + 1/3 prior + 1/6 year-before ≥ 183. NR not available if current ≥ 31 days.</span>
+          </div>
+        </div>
+        <div class="spt-check-item">
+          <input type="checkbox" id="spt-spouse" onchange="updateSPT()">
+          <div class="spt-check-text">
+            <label class="spt-check-label" for="spt-spouse">Spouse meets SPT / US citizen / LPR</label>
+            <span class="spt-check-sub">Relevant for §6013(h) vs §6013(g) election determination.</span>
+          </div>
+        </div>
+        <div class="spt-check-item">
+          <input type="checkbox" id="spt-closer" onchange="updateSPT()">
+          <div class="spt-check-text">
+            <label class="spt-check-label" for="spt-closer">Closer connection exception (Form 8840)</label>
+            <span class="spt-check-sub">Cannot override SPT if 183+ days in current year. File Form 8840 timely.</span>
+          </div>
+        </div>
+        <div id="spt-result-box"></div>
+      </div>
+
+      <!-- ARRIVAL -->
+      <div class="section-label">Taxpayer &amp; Arrival</div>
+      <div class="field-row">
+        <div class="field">
+          <label>Tax year</label>
+          <select id="inp-year"><option>2024</option><option selected>2025</option><option>2026</option></select>
+        </div>
+        <div class="field">
+          <label>US arrival date</label>
+          <input type="date" id="inp-arrival" value="2025-07-01">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Filing status</label>
+          <select id="inp-status">
+            <option value="mfj">Married filing jointly</option>
+            <option value="single">Single</option>
+            <option value="mfs">Married filing separately</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Spouse NR pre-arrival?</label>
+          <select id="inp-spouse"><option value="yes">Yes</option><option value="no">No / N/A</option></select>
+        </div>
+      </div>
+
+      <!-- PRE-ARRIVAL -->
+      <div class="section-label">Pre-Arrival Income Flags</div>
+      <div class="field-row">
+        <div class="field">
+          <label>Pre-arrival income level</label>
+          <select id="inp-preincome">
+            <option value="low">Low / ordinary employment</option>
+            <option value="moderate">Moderate (bonus, RSUs, etc.)</option>
+            <option value="high">High (property sale, large bonus)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Pre-arrival capital gains?</label>
+          <select id="inp-capgain">
+            <option value="none">None</option>
+            <option value="some">Some (securities, etc.)</option>
+            <option value="home">Home sale (FX gain potential)</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>PFICs held pre-arrival?</label>
+          <select id="inp-pfic">
+            <option value="none">None</option>
+            <option value="tfsa">In TFSA only</option>
+            <option value="rrsp">In RRSP only</option>
+            <option value="taxable">In taxable accounts</option>
+            <option value="multiple">Multiple account types</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>PFICs disposed before departure?</label>
+          <select id="inp-pfic-disposed">
+            <option value="no">No — still holding</option>
+            <option value="tfsa-only">Yes — TFSA only</option>
+            <option value="all">Yes — all disposed</option>
+            <option value="partial">Partially disposed</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>Foreign trusts / 3520?</label>
+          <select id="inp-3520">
+            <option value="no">No</option>
+            <option value="maybe">Possible — needs review</option>
+            <option value="yes">Yes — confirmed</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>FBAR / FATCA threshold?</label>
+          <select id="inp-fbar">
+            <option value="no">No / Unlikely</option>
+            <option value="maybe">Possibly</option>
+            <option value="yes">Yes — thresholds exceeded</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CANADA -->
+      <div class="section-label" style="margin-top:1.2rem">Canadian Filing Overlay</div>
+      <div class="canada-toggle-row">
+        <label class="toggle-track">
+          <input type="checkbox" id="inp-canada" checked>
+          <span class="toggle-thumb"></span>
+        </label>
+        <span class="toggle-label"><span class="canada-flag">🍁</span> Include Canadian filing overlay</span>
+      </div>
+      <div id="canada-fields">
+        <div class="field-row">
+          <div class="field">
+            <label>Canadian departure date</label>
+            <input type="date" id="inp-departure" value="2025-06-30">
+          </div>
+          <div class="field">
+            <label>Canadian rental property?</label>
+            <select id="inp-rental">
+              <option value="no">No</option>
+              <option value="sold">Sold pre-departure</option>
+              <option value="retained">Retained — rental continues</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>RRSP / RRIF?</label>
+            <select id="inp-rrsp">
+              <option value="no">No</option>
+              <option value="yes">Yes — no change</option>
+              <option value="withdraw">Withdrawing on departure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>TFSA?</label>
+            <select id="inp-tfsa">
+              <option value="no">No</option>
+              <option value="yes-keep">Yes — keeping open</option>
+              <option value="yes-close">Yes — closing before departure</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Home sold before departure?</label>
+          <select id="inp-home">
+            <option value="no">No</option>
+            <option value="principal">Yes — principal residence</option>
+            <option value="investment">Yes — investment property</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-analyze" onclick="analyze()">Generate Scenario Analysis</button>
+    </div>
+  </div>
+
+  <!-- RIGHT: OUTPUT -->
+  <div class="panel output-panel">
+    <div class="output-tabs">
+      <div class="otab active" onclick="switchOTab('timeline')">Timeline</div>
+      <div class="otab" onclick="switchOTab('scenarios')">Scenarios</div>
+      <div class="otab" onclick="switchOTab('flags')">Key Flags</div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div id="opane-timeline" class="opane active">
+      <div id="timeline-placeholder" class="placeholder">
+        <div class="placeholder-icon">📅</div>
+        <p>Enter client details and click<br><strong>Generate Scenario Analysis</strong><br>to view the filing period timeline.</p>
+      </div>
+      <div id="timeline-content" style="display:none">
+        <div class="legend" id="legend-box"></div>
+        <div id="timeline-svg"></div>
+      </div>
+    </div>
+
+    <!-- SCENARIOS -->
+    <div id="opane-scenarios" class="opane">
+      <div id="scenarios-placeholder" class="placeholder">
+        <div class="placeholder-icon">📋</div>
+        <p>Scenario analysis will appear here after inputs are submitted.</p>
+      </div>
+      <div id="scenarios-content" style="display:none">
+        <div id="scenarios-wrap" class="scenarios"></div>
+      </div>
+    </div>
+
+    <!-- FLAGS -->
+    <div id="opane-flags" class="opane">
+      <div id="flags-placeholder" class="placeholder">
+        <div class="placeholder-icon">🚩</div>
+        <p>Key filing flags and compliance considerations will appear here.</p>
+      </div>
+      <div id="flags-content" style="display:none">
+        <div id="flags-wrap"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">XB Tax Hub</div>
+  <p class="footer-disc">This tool is for planning and educational purposes only. It does not constitute tax advice. All scenarios must be reviewed by a qualified tax professional before any filing position is adopted. US–Canada crossborder tax involves complex treaty interactions and individual facts; consult a licensed CPA or EA with crossborder expertise.</p>
+</footer>
+
+<script>
+  document.getElementById('inp-canada').addEventListener('change', function() {
+    document.getElementById('canada-fields').style.display = this.checked ? '' : 'none';
+  });
+
+  function switchOTab(name) {
+    document.querySelectorAll('.otab').forEach((t, i) => {
+      t.classList.toggle('active', ['timeline','scenarios','flags'][i] === name);
+    });
+    document.querySelectorAll('.opane').forEach(p => p.classList.remove('active'));
+    document.getElementById('opane-' + name).classList.add('active');
+  }
+
+  function updateSPT() {
+    const over183 = document.getElementById('spt-183').checked;
+    const lookback = document.getElementById('spt-lookback').checked;
+    const closer = document.getElementById('spt-closer').checked;
+    const box = document.getElementById('spt-result-box');
+    const meetsSPT = (over183 || lookback) && !closer;
+    if (over183 && closer) {
+      box.innerHTML = `<div class="spt-result unknown">Closer connection exception claimed — note: Form 8840 cannot override SPT if current-year days ≥ 183. Verify day count carefully.</div>`;
+    } else if (meetsSPT) {
+      box.innerHTML = `<div class="spt-result resident">SPT met — Form 1040-NR is NOT available. Filing is limited to Dual Status (1040) or Full-Year Resident via §6013 election.</div>`;
+    } else if (!over183 && !lookback) {
+      box.innerHTML = `<div class="spt-result nonresident">SPT not indicated — all three scenarios may be available. Verify final day count before advising.</div>`;
+    } else if (closer && (over183 || lookback)) {
+      box.innerHTML = `<div class="spt-result unknown">SPT met on days test but closer connection exception claimed. If valid, NR status preserved and 1040-NR remains available. File Form 8840 timely.</div>`;
+    } else {
+      box.innerHTML = '';
+    }
+  }
+
+  function getSPT() {
+    const over183 = document.getElementById('spt-183').checked;
+    const lookback = document.getElementById('spt-lookback').checked;
+    const closer = document.getElementById('spt-closer').checked;
+    const spouseMetSPT = document.getElementById('spt-spouse').checked;
+    const meetsSPT = (over183 || lookback) && !closer;
+    return { over183, lookback, closer, spouseMetSPT, meetsSPT, nrAvailable: !meetsSPT };
+  }
+
+  function v(id) { const e = document.getElementById(id); return e ? e.value : ''; }
+  function ch(id) { const e = document.getElementById(id); return e ? e.checked : false; }
+
+  function analyze() {
+    const spt = getSPT();
+    const arrival = new Date(v('inp-arrival') || '2025-07-01');
+    const year = parseInt(v('inp-year') || '2025');
+    const canada = ch('inp-canada');
+    const departure = canada ? new Date(v('inp-departure') || '2025-06-30') : null;
+    const pfic = v('inp-pfic'), pficDis = v('inp-pfic-disposed'), trst = v('inp-3520'), fbar = v('inp-fbar');
+    const rental = v('inp-rental'), rrsp = v('inp-rrsp'), tfsa = v('inp-tfsa'), home = v('inp-home');
+    const preIncome = v('inp-preincome'), capGain = v('inp-capgain'), status = v('inp-status');
+
+    const jan1 = new Date(year, 0, 1), dec31 = new Date(year, 11, 31);
+    const totalDays = (dec31 - jan1) / 86400000 + 1;
+    const preDays = Math.max(0, (arrival - jan1) / 86400000);
+    const prePct = preDays / totalDays;
+    const arrLabel = arrival.toLocaleString('default', { month: 'short', day: 'numeric' });
+
+    buildTimeline(year, arrival, departure, canada, jan1, totalDays, prePct, arrLabel, spt);
+    buildScenarios(arrival, departure, canada, pfic, pficDis, trst, fbar, rental, rrsp, tfsa, home, preIncome, capGain, status, preDays, totalDays, arrLabel, spt);
+    buildFlags(pfic, pficDis, trst, fbar, rental, rrsp, tfsa, home, preIncome, capGain, canada, spt);
+
+    ['timeline','scenarios','flags'].forEach(n => {
+      document.getElementById(n + '-placeholder').style.display = 'none';
+      document.getElementById(n + '-content').style.display = 'block';
+    });
+    switchOTab('timeline');
+  }
+
+  function buildTimeline(year, arrival, departure, canada, jan1, totalDays, prePct, arrLabel, spt) {
+    const W = 660, lm = 16, barW = W - lm - 16, barH = 36, gap = 20, tm = 46;
+    const arrX = lm + barW * prePct;
+    const unavC = '#D3D1C7';
+
+    const rows = [];
+    if (spt.nrAvailable) {
+      rows.push({ label: 'Scenario A — 1040-NR (non-resident)', avail: true,
+        segs: [{ x: lm, w: barW, fill: '#888780', label: 'Full year NR · Form 1040-NR' }] });
+    } else {
+      rows.push({ label: 'Scenario A — 1040-NR (not available)', avail: false,
+        reason: spt.over183 ? 'SPT met: 183+ days in current year' : 'SPT met: weighted lookback test',
+        segs: [{ x: lm, w: barW, fill: unavC, label: 'SPT met — 1040-NR not available' }] });
+    }
+    rows.push({ label: 'Scenario B — Dual status (1040)', avail: true,
+      segs: [
+        { x: lm, w: barW * prePct, fill: '#888780', label: 'NR period' },
+        { x: arrX, w: barW * (1 - prePct), fill: '#378ADD', label: 'US resident · Form 1040' }
+      ]
+    });
+    rows.push({ label: 'Scenario C — §6013 full-year resident', avail: true,
+      segs: [{ x: lm, w: barW, fill: '#534AB7', label: 'Full-year resident election (MFJ)' }] });
+
+    let svgParts = '', curY = tm;
+    rows.forEach((row, idx) => {
+      const labelColor = row.avail ? '#5a6a7a' : '#a32d2d';
+      svgParts += `<text x="${lm}" y="${curY - 7}" font-size="11" fill="${labelColor}" font-family="Figtree,sans-serif">${row.label}</text>`;
+      if (!row.avail) {
+        svgParts += `<defs><pattern id="h${idx}" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="8" stroke="#ccc" stroke-width="2"/></pattern></defs>`;
+        svgParts += `<rect x="${lm}" y="${curY}" width="${barW}" height="${barH}" rx="6" fill="url(#h${idx})"/>`;
+        svgParts += `<rect x="${lm}" y="${curY}" width="${barW}" height="${barH}" rx="6" fill="${unavC}" fill-opacity="0.5" stroke="${unavC}" stroke-width="1"/>`;
+        svgParts += `<text x="${lm + barW/2}" y="${curY + barH/2 + 1}" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#888" font-family="Figtree,sans-serif" font-weight="500">${row.segs[0].label}</text>`;
+        if (row.reason) {
+          svgParts += `<text x="${lm + barW/2}" y="${curY + barH + 14}" text-anchor="middle" font-size="10" fill="#a32d2d" font-family="Figtree,sans-serif">${row.reason}</text>`;
+          curY += 16;
+        }
+      } else {
+        row.segs.forEach(seg => {
+          if (seg.w > 1) {
+            svgParts += `<rect x="${seg.x.toFixed(1)}" y="${curY}" width="${Math.max(seg.w,2).toFixed(1)}" height="${barH}" rx="6" fill="${seg.fill}" opacity="0.88"/>`;
+            if (seg.w > 50) {
+              svgParts += `<text x="${(seg.x + seg.w/2).toFixed(1)}" y="${curY + barH/2 + 1}" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#fff" font-family="Figtree,sans-serif" font-weight="500">${seg.label}</text>`;
+            }
+          }
+        });
+      }
+      curY += barH + gap;
+    });
+
+    // Arrival line
+    svgParts += `<line x1="${arrX.toFixed(1)}" y1="${tm-10}" x2="${arrX.toFixed(1)}" y2="${curY - gap + 2}" stroke="#0d1b2a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>`;
+    svgParts += `<text x="${arrX.toFixed(1)}" y="${tm-16}" text-anchor="middle" font-size="11" fill="#0d1b2a" font-family="Figtree,sans-serif" font-weight="600">US arrival ${arrLabel}</text>`;
+
+    // Month ticks
+    const tickY = curY;
+    for (let m = 0; m < 12; m++) {
+      const d = new Date(year, m, 1);
+      const pct = (d - new Date(year, 0, 1)) / (86400000 * totalDays);
+      const tx = lm + barW * pct;
+      svgParts += `<line x1="${tx.toFixed(1)}" y1="${tickY}" x2="${tx.toFixed(1)}" y2="${tickY+4}" stroke="#ccc" stroke-width="0.5"/>`;
+      svgParts += `<text x="${tx.toFixed(1)}" y="${tickY+15}" text-anchor="middle" font-size="10" fill="#8a9aaa" font-family="Figtree,sans-serif">${d.toLocaleString('default',{month:'short'})}</text>`;
+    }
+
+    let caRow = '', caExtra = 0;
+    if (canada && departure) {
+      const depPct = (departure - new Date(year, 0, 1)) / (86400000 * totalDays);
+      const depX = lm + barW * depPct;
+      const caY = tickY + 32;
+      caExtra = barH + 50;
+      const depLabel = departure.toLocaleString('default', {month:'short',day:'numeric'});
+      caRow += `<text x="${lm}" y="${caY-7}" font-size="11" fill="#a32d2d" font-family="Figtree,sans-serif" font-weight="600">Canadian T1 — part-year departure return</text>`;
+      caRow += `<rect x="${lm}" y="${caY}" width="${Math.max(depX-lm,2).toFixed(1)}" height="${barH}" rx="6" fill="#a32d2d" opacity="0.78"/>`;
+      if (depX - lm > 60) {
+        caRow += `<text x="${(lm+(depX-lm)/2).toFixed(1)}" y="${caY+barH/2+1}" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#fff" font-family="Figtree,sans-serif" font-weight="500">CDN resident period → departure return</text>`;
+      }
+      caRow += `<line x1="${depX.toFixed(1)}" y1="${caY-4}" x2="${depX.toFixed(1)}" y2="${caY+barH+10}" stroke="#a32d2d" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.5"/>`;
+      caRow += `<text x="${depX.toFixed(1)}" y="${caY+barH+22}" text-anchor="middle" font-size="10" fill="#a32d2d" font-family="Figtree,sans-serif">CDN departure ${depLabel}</text>`;
+    }
+
+    const totalH = tickY + 24 + caExtra + 16;
+    document.getElementById('timeline-svg').innerHTML = `<svg viewBox="0 0 ${W} ${totalH}" style="width:100%;display:block" xmlns="http://www.w3.org/2000/svg">
+      <text x="${W/2}" y="20" text-anchor="middle" font-size="12" fill="#0d1b2a" font-family="Figtree,sans-serif" font-weight="600">Filing period comparison — tax year ${year}</text>
+      ${svgParts}${caRow}
+    </svg>`;
+
+    document.getElementById('legend-box').innerHTML = [
+      ['#888780','Pre-arrival / NR period'],
+      ['#378ADD','Post-arrival US resident'],
+      ['#534AB7','MFJ full-year election'],
+      ...(canada ? [['#a32d2d','Canadian T1 period']] : []),
+      ['#D3D1C7','Scenario not available'],
+    ].map(([c,l]) => `<div class="leg-item"><div class="leg-dot" style="background:${c}"></div>${l}</div>`).join('');
+  }
+
+  function buildScenarios(arrival, departure, canada, pfic, pficDis, trst, fbar, rental, rrsp, tfsa, home, preIncome, capGain, status, preDays, totalDays, arrLabel, spt) {
+    const hi = preIncome === 'high', mod = preIncome === 'moderate';
+    const hasPFIC = pfic !== 'none';
+    const pficTFSA = pfic === 'tfsa' || pfic === 'multiple';
+    const pficDisp = pficDis === 'tfsa-only' || pficDis === 'all';
+    const has3520 = trst !== 'no';
+    const hasFBAR = fbar !== 'no';
+    const hasTFSA = tfsa !== 'no';
+    const hasRRSP = rrsp !== 'no';
+    const hasRental = rental !== 'no';
+    const homeGain = capGain === 'home';
+    const fxRisk = homeGain || home !== 'no';
+
+    const nrReason = !spt.nrAvailable
+      ? (spt.closer ? 'Closer connection exception may not override 183+ current-year day count — verify eligibility for Form 8840.'
+        : spt.over183 ? 'SPT met: taxpayer was present in the US for 183 or more days in the current tax year.'
+        : 'SPT met on weighted 3-year lookback test.')
+      : null;
+
+    const defs = [
+      {
+        id: 'nr', avail: spt.nrAvailable,
+        title: 'Scenario A — Non-resident alien',
+        sub: spt.nrAvailable ? 'Form 1040-NR · Only US-source income taxed' : 'NOT AVAILABLE — Substantial Presence Test met',
+        color: spt.nrAvailable ? '#5a6a7a' : '#a32d2d',
+        bg: spt.nrAvailable ? '#f7f6f3' : '#faeaea',
+        pros: spt.nrAvailable ? [
+          'Pre-arrival income excluded — no US tax on Canadian earnings',
+          'No worldwide income inclusion for entire year',
+          'Simplest return if US-source income is minimal',
+          fxRisk ? 'No US FX gain on home sale or assets sold pre-arrival' : null,
+        ].filter(Boolean) : ['N/A — not available based on SPT inputs'],
+        cons: spt.nrAvailable ? [
+          'No standard deduction — itemized only for most NRs',
+          '30% flat tax on FDAP income unless treaty reduces rate',
+          hasPFIC ? 'PFICs retained and later sold as US resident: punitive look-back charges apply' : null,
+          has3520 ? '3520/3520-A may still apply if trust distributions received in US period' : null,
+          status === 'mfj' ? 'Cannot file jointly — no MFJ tax benefits available' : null,
+        ].filter(Boolean) : [],
+        alerts: spt.nrAvailable ? [
+          hasFBAR ? { t: 'warn', m: 'FBAR still required if >$10K in foreign accounts at any point during the year' } : null,
+          hasPFIC ? { t: 'danger', m: 'PFIC ownership creates future 8621 exposure once taxpayer becomes a US person' } : null,
+        ].filter(Boolean) : [{ t: 'danger', m: nrReason }],
+        canada: spt.nrAvailable && canada ? [
+          'Part-year T1 departure return required',
+          homeGain ? 'Principal residence exemption available on home sale if conditions met' : null,
+          hasTFSA ? 'TFSA: 1% monthly penalty tax on FMV if kept open post-departure' : null,
+          hasRRSP ? 'RRSP: Treaty deferral election available; annual treaty disclosure required' : null,
+          hasRental ? 'Retained rental: s.216 election for net rental income vs 25% NR withholding' : null,
+        ].filter(Boolean) : null,
+      },
+      {
+        id: 'ds', avail: true,
+        title: 'Scenario B — Dual status alien',
+        sub: `NR Jan 1 → ${arrLabel} · Resident ${arrLabel} → Dec 31 · Form 1040`,
+        color: '#185FA5',
+        bg: '#EBF2FA',
+        pros: [
+          'Post-arrival: standard deduction, full resident benefits',
+          spt.meetsSPT ? 'Compliant when SPT is met — one of two available options' : 'Pre-arrival income excluded from US tax',
+          hasPFIC && pficDisp ? 'PFICs disposed in TFSA pre-departure: no CDN tax (TFSA sheltered) + no US 8621 (pre-residency) — optimal outcome' : null,
+          fxRisk ? 'Home sold pre-arrival: gain in NR period — generally not US-taxable' : null,
+        ].filter(Boolean),
+        cons: [
+          'Standard deduction not available for full year under dual status rules',
+          'Complex return — requires NR period attachment',
+          status === 'mfj' ? 'Cannot file MFJ without §6013 election — see Scenario C' : null,
+          hasPFIC && !pficDisp ? '8621 required for each PFIC held at residency start; QEF or MTM election essential' : null,
+          has3520 ? '3520 required if foreign trust transactions occurred — $10K+ failure penalty' : null,
+          hi ? 'Large pre-arrival income excluded, but verify US-source rules (US employer payments, stock comp may have US nexus)' : null,
+        ].filter(Boolean),
+        alerts: [
+          hasPFIC && !pficDisp ? { t: 'danger', m: '8621 required for each PFIC at residency start — default excess distribution method is punitive; QEF or MTM election needed by filing due date' } : null,
+          hasPFIC && pficDisp ? { t: 'info', m: 'PFIC disposed in TFSA pre-departure: no CDN tax + no US 8621 obligation. Document this planning carefully.' } : null,
+          has3520 ? { t: 'warn', m: '3520/3520-A: Review Canadian family trusts, RESPs with third-party contributions, informal trust arrangements' } : null,
+          hasFBAR ? { t: 'warn', m: 'FBAR due April 15 (auto-extends Oct 15). FATCA Form 8938 has different thresholds — file both if applicable.' } : null,
+        ].filter(Boolean),
+        canada: canada ? [
+          'Part-year T1 departure return required in Canada',
+          hasRRSP ? 'RRSP: Article XVIII(7) treaty deferral; annual treaty disclosure required' : null,
+          hasTFSA ? 'TFSA post-departure: 1% monthly penalty on FMV. Consider closing before departure.' : null,
+          hasRental ? 'Retained rental: s.216 election optimal; tenant must remit 25% NR withholding absent CRA waiver' : null,
+          homeGain ? 'CDN home sold pre-departure: principal residence exemption if eligible — report on T1' : null,
+          fxRisk ? 'Foreign mortgage FX gain: USD gain on repayment of CAD mortgage — often overlooked, reportable on T1' : null,
+        ].filter(Boolean) : null,
+      },
+      {
+        id: 'mfj', avail: true,
+        title: 'Scenario C — Full-year resident via §6013(g)/(h) election',
+        sub: 'Both spouses treated as US residents for full year · MFJ · Form 1040',
+        color: '#534AB7',
+        bg: '#EEEDFE',
+        pros: [
+          status === 'mfj' ? 'MFJ filing: standard deduction, all credits, income splitting — often largest tax savings post-arrival' : null,
+          'Single 1040 — no dual status complexities or NR period attachment',
+          spt.meetsSPT ? 'One of two compliant options when SPT is met' : null,
+          !pficDisp && hasPFIC ? 'Full-year resident enables QEF elections from Jan 1 — cleaner PFIC treatment than mid-year start' : null,
+        ].filter(Boolean),
+        cons: [
+          'Pre-arrival worldwide income now US-taxable — CDN income Jan 1 through arrival included',
+          hi || mod ? 'High/moderate pre-arrival income: election may create significant incremental US tax on income already taxed in Canada' : 'FTC on pre-arrival CDN tax may not fully offset — depends on income type and rates',
+          fxRisk ? 'Home sold pre-arrival: FX gain potentially US-taxable as full-year resident — major risk if gain is large' : null,
+          'Both spouses must consent; election generally irrevocable',
+          hasPFIC ? 'All PFICs treated as held by US person from Jan 1 — 8621 required; purging election needed if QEF not timely made' : null,
+          has3520 ? '3520 obligations apply for full year — no pre-arrival safe harbor' : null,
+        ].filter(Boolean),
+        alerts: [
+          (hi || mod) ? { t: 'danger', m: 'Run the numbers: pre-arrival CDN income pulled into US tax base — FTC may only partially offset. Net cost vs MFJ benefit must be modeled before electing.' } : null,
+          hasPFIC && pficTFSA && !pficDisp ? { t: 'danger', m: 'PFICs in TFSA + full-year election: TFSA loses treaty protection; PFIC rules apply from Jan 1 with no disposal window' } : null,
+          hasPFIC && pficDisp ? { t: 'warn', m: 'PFICs disposed in TFSA pre-departure avoids the PFIC trap, but 6013 election still subjects pre-arrival gain to US tax. Compare with Scenario B.' } : null,
+          homeGain ? { t: 'danger', m: 'Foreign mortgage FX gain: full-year resident means USD gain on CAD mortgage repayment is taxable — often $10K–$100K+' } : null,
+          { t: 'info', m: 'Treaty tie-breaker Article IV(2): dual residency during transition year requires tie-breaker analysis before 6013 election is made.' },
+        ].filter(Boolean),
+        canada: canada ? [
+          'Part-year T1 still required in Canada — US election does NOT eliminate Canadian filing',
+          'Double-tax risk on pre-arrival income: both CDN and US tax apply; FTC provides only partial relief',
+          hasTFSA ? 'TFSA: no US treaty protection under full-year election; annual 3520 and/or 8621 may be required' : null,
+          hasRRSP ? 'RRSP: Article XVIII treaty deferral still available; annual treaty disclosure required' : null,
+          hasRental ? 'All CDN rental income US-taxable as full-year resident; FTC for CDN NR withholding available' : null,
+        ].filter(Boolean) : null,
+      }
+    ];
+
+    document.getElementById('scenarios-wrap').innerHTML = defs.map(sc => {
+      const ua = !sc.avail;
+      let h = `<div class="scenario-card${ua ? ' unavailable' : ''}">`;
+      if (ua) h += `<div class="unavail-banner">Not available — Substantial Presence Test met</div>`;
+      h += `<div class="scenario-header" style="background:${sc.bg}">
+        <div class="scenario-title" style="color:${sc.color}">${sc.title}</div>
+        <div class="scenario-sub" style="color:${sc.color}">${sc.sub}</div>
+      </div>`;
+      if (!ua) {
+        h += `<div class="scenario-cols">
+          <div class="s-col pros"><div class="s-col-head">Advantages</div><ul class="s-list">${sc.pros.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+          <div class="s-col cons"><div class="s-col-head">Risks / drawbacks</div><ul class="s-list">${sc.cons.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        </div>`;
+      }
+      if (sc.alerts.length) h += `<div class="alert-strip">${sc.alerts.map(a=>`<span class="abadge ${a.t}">${a.m}</span>`).join('')}</div>`;
+      if (sc.canada && sc.canada.length) h += `<div class="canada-strip"><div class="canada-strip-head">🍁 Canadian overlay</div><div class="canada-tags">${sc.canada.map(t=>`<span class="cdn-tag">${t}</span>`).join('')}</div></div>`;
+      return h + '</div>';
+    }).join('');
+  }
+
+  function buildFlags(pfic, pficDis, trst, fbar, rental, rrsp, tfsa, home, preIncome, capGain, canada, spt) {
+    const pficTFSA = pfic === 'tfsa' || pfic === 'multiple';
+    const pficDisp = pficDis === 'tfsa-only' || pficDis === 'all';
+    const hi = preIncome === 'high';
+    const hasTFSA = tfsa !== 'no';
+    const hasRental = rental !== 'no';
+    const homeGain = capGain === 'home';
+
+    const sections = [];
+
+    // SPT
+    const sptItems = [];
+    if (spt.meetsSPT) sptItems.push({ cls: 'spt', t: 'SPT met: Form 1040-NR is NOT available. Filing limited to Dual Status (Form 1040) or Full-Year Resident via §6013 election.' });
+    if (spt.closer) sptItems.push({ cls: 'neutral', t: 'Closer connection exception (Form 8840): requires tax home in foreign country + closer connection. Cannot override SPT if 183+ days in current year.' });
+    if (!spt.over183 && !spt.lookback) sptItems.push({ cls: 'neutral', t: 'SPT not yet confirmed. Verify final day count. Prior-year days count at 1/3 and 1/6 in the lookback calculation.' });
+    if (spt.spouseMetSPT) sptItems.push({ cls: 'neutral', t: 'Spouse meets SPT or is US citizen/LPR: §6013(h) election applies. Both spouses treated as full-year residents — distinct from §6013(g) where one spouse is NR.' });
+    if (sptItems.length) sections.push({ head: 'Substantial presence test', dot: '#a32d2d', items: sptItems });
+
+    // PFIC
+    const pficItems = [];
+    if (pfic !== 'none') {
+      pficItems.push({ cls: 'pfic', t: 'PFICs held — Form 8621 required for each PFIC per year. Default "excess distribution" method is extremely punitive. QEF or MTM election strongly recommended.' });
+      if (pficTFSA && !pficDisp) pficItems.push({ cls: 'pfic', t: 'PFICs in TFSA: US rules do not recognize TFSA as tax-exempt. PFICs inside TFSA subject to 8621 + potential 3520 if TFSA treated as foreign grantor trust.' });
+      if (pficDisp) pficItems.push({ cls: 'pfic', t: 'PFICs disposed in TFSA pre-departure: no CDN tax (TFSA sheltered) and no US 8621 obligation if disposed before US residency start. Document carefully.' });
+      if (!pficDisp) pficItems.push({ cls: 'pfic', t: 'PFICs retained at US residency start: QEF or MTM election must be made by first 8621 due date. Failure defaults to excess distribution method retroactively.' });
+    }
+    if (pficItems.length) sections.push({ head: 'PFIC considerations', dot: '#8a5c00', items: pficItems });
+
+    // Reporting
+    const repItems = [];
+    if (fbar !== 'no') repItems.push({ cls: 'reporting', t: 'FBAR (FinCEN 114): Due April 15; auto-extends to Oct 15. Covers any foreign financial account >$10K aggregate at any point. Willful failure penalty: greater of $100K or 50% of account.' });
+    if (fbar !== 'no') repItems.push({ cls: 'reporting', t: 'FATCA Form 8938: Higher thresholds than FBAR ($50K single / $100K MFJ). Files with Form 1040. Different scope from FBAR — file both when applicable.' });
+    if (trst !== 'no') repItems.push({ cls: 'reporting', t: '3520 / 3520-A: Annual filing for foreign trust transactions, gifts >$100K, or inheritances. Penalty: 35% of trust transfer. Review Canadian family trusts, RESPs with third-party contributions, informal arrangements.' });
+    if (hasTFSA) repItems.push({ cls: 'reporting', t: 'TFSA as foreign trust: IRS position treats TFSA as foreign grantor trust once taxpayer is a US person. Annual 3520 reporting is recommended. Many practitioners file protectively.' });
+    if (repItems.length) sections.push({ head: 'Information reporting obligations', dot: '#a32d2d', items: repItems });
+
+    // Treaty
+    const treatyItems = [];
+    if (canada) {
+      treatyItems.push({ cls: 'treaty', t: 'RRSP treaty deferral (Article XVIII(7)): US will not tax RRSP income until distributed if treaty election is made. Annual treaty position must be documented on US return.' });
+      if (hasRental) treatyItems.push({ cls: 'treaty', t: 'CDN rental income: Both US Schedule E and Canadian s.216 return required. FTC for CDN NR withholding (25% or treaty-reduced 15%). Double-tax risk if US rate > CDN NR rate.' });
+      if (homeGain) treatyItems.push({ cls: 'treaty', t: 'CDN home sale FX gain: USD gain on repayment of a CAD mortgage is separately taxable under IRC Sec 988 FX rules. Track original mortgage in USD equivalent. Often $10K–$100K+ of overlooked exposure.' });
+      treatyItems.push({ cls: 'treaty', t: 'Treaty tie-breaker Article IV(2): dual residency during transition year requires tie-breaker analysis. Outcome affects which country has primary taxing rights — must be resolved before any §6013 election is made.' });
+    }
+    if (treatyItems.length) sections.push({ head: 'Treaty & crossborder issues', dot: '#185FA5', items: treatyItems });
+
+    // Planning
+    const planItems = [
+      ...(hi ? [{ cls: 'neutral', t: 'High pre-arrival income: model the incremental US tax cost of the §6013 MFJ election vs the MFJ tax benefits. In most high-pre-income cases, Dual Status is the better option.' }] : []),
+      ...(pficTFSA && !pficDisp ? [{ cls: 'neutral', t: 'TFSA PFIC planning window: dispose of mutual funds, ETFs, and non-US listed equities inside TFSA before US residency begins. No CDN tax on TFSA disposition — eliminates all future 8621 complexity.' }] : []),
+      { cls: 'neutral', t: 'State filing: year-of-arrival state residency varies by state. CA, VA, and MA assert residency from first day of intent to remain. Separate state analysis required.' },
+      { cls: 'neutral', t: 'SPT day count: verify carefully before advising. Prior-year US days count at 1/3 and 1/6 respectively. An incorrect SPT residency start date invalidates all filing analysis.' },
+    ];
+    sections.push({ head: 'Planning checkpoints', dot: '#5a6a7a', items: planItems });
+
+    document.getElementById('flags-wrap').innerHTML = sections.map(s => `
+      <div class="flag-section">
+        <div class="flag-section-head"><span class="flag-dot" style="background:${s.dot}"></span>${s.head}</div>
+        <div class="flag-grid">${s.items.map(i=>`<div class="flag-item ${i.cls}">${i.t}</div>`).join('')}</div>
+      </div>`).join('');
+  }
+</script>
+</body>
+</html>
