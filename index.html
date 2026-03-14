@@ -1052,7 +1052,7 @@
         color: '#185FA5',
         bg: '#EBF2FA',
         pros: [
-          'Post-arrival: standard deduction, full resident benefits',
+          'Post-arrival: itemized deductions during residency period available',
           spt.meetsSPT ? 'Compliant when SPT is met — one of two available options' : 'Pre-arrival income excluded from US tax',
           hasPFIC && pficDisp ? 'PFICs disposed in TFSA pre-departure: no CDN tax (TFSA sheltered) + no US 8621 (pre-residency) — optimal outcome' : null,
           fxRisk ? 'Home sold pre-arrival: gain in NR period — generally not US-taxable' : null,
@@ -1061,7 +1061,7 @@
           'Standard deduction not available for full year under dual status rules',
           'Complex return — requires NR period attachment',
           status === 'mfj' ? 'Cannot file MFJ without §6013 election — see Scenario C' : null,
-          hasPFIC && !pficDisp ? '8621 required for each PFIC held at residency start; QEF or MTM election essential' : null,
+          hasPFIC && !pficDisp ? '8621 required for each PFIC held at residency start; QEF or MTM election recommended' : null,
           has3520 ? '3520 required if foreign trust transactions occurred — $10K+ failure penalty' : null,
           hi ? 'Large pre-arrival income excluded, but verify US-source rules (US employer payments, stock comp may have US nexus)' : null,
         ].filter(Boolean),
@@ -1073,11 +1073,11 @@
         ].filter(Boolean),
         canada: canada ? [
           'Part-year T1 departure return required in Canada',
-          hasRRSP ? 'RRSP: Article XVIII(7) treaty deferral; annual treaty disclosure required' : null,
-          hasTFSA ? 'TFSA post-departure: 1% monthly penalty on FMV. Consider closing before departure.' : null,
+          hasRRSP ? 'RRSP: Article XVIII(7) treaty deferral applies' : null,
+          hasTFSA ? 'TFSA post-departure: 1% monthly penalty on non-resident contributions. Consider closing before departure.' : null,
           hasRental ? 'Retained rental: s.216 election optimal; tenant must remit 25% NR withholding absent CRA waiver' : null,
           homeGain ? 'CDN home sold pre-departure: principal residence exemption if eligible — report on T1' : null,
-          fxRisk ? 'Foreign mortgage FX gain: USD gain on repayment of CAD mortgage — often overlooked, reportable on T1' : null,
+          fxRisk ? 'Foreign mortgage FX gain: Potential USD gain on repayment of CAD mortgage — often overlooked' : null,
         ].filter(Boolean) : null,
       },
       {
