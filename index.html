@@ -1040,7 +1040,7 @@
         canada: spt.nrAvailable && canada ? [
           'Part-year T1 departure return required',
           homeGain ? 'Principal residence exemption available on home sale if conditions met' : null,
-          hasTFSA ? 'TFSA: 1% monthly penalty tax on FMV if kept open post-departure' : null,
+          hasTFSA ? 'TFSA: 1% monthly penalty tax on any non-resident contributions made post-departure' : null,
           hasRRSP ? 'RRSP: Treaty deferral election available; annual treaty disclosure required' : null,
           hasRental ? 'Retained rental: s.216 election for net rental income vs 25% NR withholding' : null,
         ].filter(Boolean) : null,
@@ -1074,7 +1074,7 @@
         canada: canada ? [
           'Part-year T1 departure return required in Canada',
           hasRRSP ? 'RRSP: Article XVIII(7) treaty deferral applies' : null,
-          hasTFSA ? 'TFSA post-departure: 1% monthly penalty on non-resident contributions. Consider closing before departure.' : null,
+          hasTFSA ? 'TFSA post-departure: 1% monthly penalty on non-resident contributions made post-departure. Consider closing before departure.' : null,
           hasRental ? 'Retained rental: s.216 election optimal; tenant must remit 25% NR withholding absent CRA waiver' : null,
           homeGain ? 'CDN home sold pre-departure: principal residence exemption if eligible — report on T1' : null,
           fxRisk ? 'Foreign mortgage FX gain: Potential USD gain on repayment of CAD mortgage — often overlooked' : null,
